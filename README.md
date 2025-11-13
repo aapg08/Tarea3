@@ -4,11 +4,11 @@
 
 ### Paquete Simple PDU
 
-#### Resumen
+
 1. **Tamaño del paquete:** 32 bits
 2. **Dirección IP de destino:** 172.20.0.2
 
-#### Detalle por capas
+#### 3. Detalle por capas
 - **Capa de Entrada:**
   - **Capa 1:**
     - Puerto FastEthernet recibe el frame.
@@ -38,19 +38,19 @@
 
 ### Envío y Recepción de Email
 
-#### Tipos de paquetes
+#### 1. Tipos de paquetes
 1. **DNS:** Se usa al inicio para encontrar el nombre de dominio del servidor de correo y obtener su dirección IP necesaria para el envío y la recepción.
 2. **SMTP:** Se utiliza en la fase de envío. Es el protocolo que transporta el mensaje del correo electrónico desde el PC del Profesor.
 3. **POP3:** Se utiliza en la fase de recepción. Es el protocolo que permite al PC en que se conectó el alumno autenticarse y descargar el mensaje desde el Servidor.
 
-#### Protocolos de red utilizados
+#### 2. Protocolos de red utilizados
 - **TCP:**
   - Protocolo clave para el servicio de correo, ya que entrega la confiabilidad necesaria para SMTP y POP3.
   - Su función comienza con el establecimiento de la conexión para garantizar que el cliente y servidor estén listos.
   - Divide el correo electrónico en segmentos, asegura que lleguen en el orden correcto mediante el uso de números de secuencia, gestiona el control de flujo y la retransmisión en caso de que se pierdan datos.
   - Cierra la conexión de forma ordenada, garantizando que el mensaje completo se haya enviado o recibido sin errores.
 
-#### Flujo de comunicación
+#### 3. Flujo de comunicación
 
 - **Desde el dispositivo de la casa del profesor (laptop) hacia el servidor:**
   1. Se genera un paquete DNS, pero como no se conoce la traducción MAC de la dirección IP, se envía un ARP request.
@@ -67,7 +67,7 @@
     - En lugar de SMTP, se utiliza POP3 para descargar los correos entrantes.
     - En la casa del profesor, la conexión wireless propaga paquetes a otros dispositivos, pero estos los descartan si no son los destinatarios.
 
-#### Necesidad de los protocolos y paquetes
+#### 4. Necesidad de los protocolos y paquetes
 - **DNS:** Traduce nombres de dominio a direcciones IP.
 - **SMTP y POP3:** Definen el idioma de la aplicación para enviar y recibir correos.
 - **TCP:** Asegura la integridad de los datos durante la transmisión.
@@ -100,5 +100,4 @@
   - **Capa 7:**
     - El cliente HTTP recibe una respuesta HTTP desde el servidor.
     - Muestra la página en el navegador web.
-
 
